@@ -8,6 +8,7 @@ Recently, I stumbled upon this [article](https://www.phillyvoice.com/viral-crowd
 So, here's my attempt at solving this problem, albeit not entirely, but it does enforce some level of accountability on otherwise susceptible existing crowdfunding platforms.
 
 ![Existing Crowdsourcing Platforms](https://raw.githubusercontent.com/Yoddha99/PledgeFund/master/diagrams/1.png)
+
 <small>Exisiting Crowdsourcing Platforms</small>
 
 ![Ideal Scenario](https://raw.githubusercontent.com/Yoddha99/PledgeFund/master/diagrams/2.png)
@@ -34,7 +35,7 @@ There are two different kinds of roles that will access PledgeFund -
 # How to install & run:
 
 > **Note: Metamask wallet necessary for running this app**
-Create an account on metamask & keep the 12 word mnemonic handy for later. Also generate an api key from infura.io for deploying to rinkeby test network.
+> Create an account on metamask & keep the 12 word mnemonic handy for later. Also generate an api key from infura.io for deploying to rinkeby test network.
 - Download the [repo](https://github.com/Yoddha99/PledgeFund/archive/refs/heads/master.zip) & extract the folder.
 - cd into PledgeFund folder & run 
 	- `npm install`
