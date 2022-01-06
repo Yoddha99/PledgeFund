@@ -110,13 +110,15 @@ class CampaignShow extends React.Component {
         </Row>
         <Row className="layout-margin">
           <Col sm={6}>
+            <Button variant="dark" size="md"
+              style={{ marginBottom: '15px' }}
+              onClick={() => { Router.push(`/campaigns/${this.props.address}/requests`) }}
+            >
+              View Requests
+            </Button>
             <Row xs={1} md={2} className="g-4 mb-3">
               {this.renderCards()}
             </Row>
-            
-            <Button variant="dark" size="md" onClick={() => { Router.push(`/campaigns/${this.props.address}/requests`) }}>
-                View Requests
-            </Button>
           </Col>
           <Col sm={1}></Col>
           <Col sm={5}>

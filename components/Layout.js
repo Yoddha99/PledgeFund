@@ -8,7 +8,7 @@ const Layout = (props) => {
   return (
     <>
       <Head>
-        <link rel="icon" type="image/png" href="/static/images/donation.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/static/images/icon.png" sizes="48x48" />
       </Head>
       <Container fluid>
         <Row className='layout-margin'>
