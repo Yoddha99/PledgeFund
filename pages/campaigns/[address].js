@@ -5,6 +5,7 @@ import { withRouter } from 'next/router';
 import Campaign from '../../ethereum/campaign';
 import web3 from '../../ethereum/web3';
 import ContributeForm from '../../components/ContributeForm';
+import Head from 'next/head';
 import Router from 'next/router';
 
 class CampaignShow extends React.Component {
@@ -34,6 +35,9 @@ class CampaignShow extends React.Component {
 
     return (
       <>
+        <Head>
+          <title>Campain - {this.props.address}</title>
+        </Head>
         <Col>
           <Card style={{ height: '100%' }}>
             <Card.Header>Address of Manager</Card.Header>

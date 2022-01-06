@@ -4,6 +4,7 @@ import Layout from '../../components/Layout';
 import factory from '../../ethereum/factory';
 import web3 from '../../ethereum/web3';
 import Router from 'next/router';
+import Head from 'next/head';
 import { toast } from 'react-toastify';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -64,48 +65,53 @@ class CampaignNew extends React.Component {
   render() {
 
     return (
-      <Layout>
-        <Row className="layout-margin">
-          <Col >
-            <span style={{ fontSize: '20px' }}>Create a new campaign!</span>
-          </Col>
-        </Row>
-        <Row className="layout-margin">
-          <Col>
-            <Form onSubmit={this.onSubmit}>
-              <Form.Group className="mb-3" controlId="minContrib">
-                <Form.Label>Minimum Contribution<span style={{ color: 'red' }}>*</span></Form.Label>
-                <InputGroup className="mb-3">
-                  <Form.Control required
-                    type="text"
-                    value={this.state.minimumContribution}
-                    onChange={e => { this.setState({ minimumContribution: e.target.value }) }}
-                    aria-label="Minimum Contribution in wei"
-                  />
-                  <InputGroup.Text>wei</InputGroup.Text>
-                </InputGroup>
-              </Form.Group>
-              {this.state.errorMessage ?
-                (<Alert key={this.state.errorMessage} variant='danger'>
-                  {this.state.errorMessage}
-                </Alert>)
-                : ''
-              }
-              <Button variant="primary" type="submit" disabled={this.state.isLoading}>
-                {this.state.isLoading ?
-                  (<><Spinner
-                    as="span"
-                    animation="grow"
-                    size="sm"
-                    role="status"
-                    aria-hidden="true"
-                  /> Loading...</>)
-                  : "Create"}
-              </Button>
-            </Form>
-          </Col>
-        </Row>
-      </Layout>
+      <>
+      <Head>
+        <title>New Campain - PledgeFund</title>
+      </Head>
+        <Layout>
+          <Row className="layout-margin">
+            <Col >
+              <span style={{ fontSize: '20px' }}>Create a new campaign!</span>
+            </Col>
+          </Row>
+          <Row className="layout-margin">
+            <Col>
+              <Form onSubmit={this.onSubmit}>
+                <Form.Group className="mb-3" controlId="minContrib">
+                  <Form.Label>Minimum Contribution<span style={{ color: 'red' }}>*</span></Form.Label>
+                  <InputGroup className="mb-3">
+                    <Form.Control required
+                      type="text"
+                      value={this.state.minimumContribution}
+                      onChange={e => { this.setState({ minimumContribution: e.target.value }) }}
+                      aria-label="Minimum Contribution in wei"
+                    />
+                    <InputGroup.Text>wei</InputGroup.Text>
+                  </InputGroup>
+                </Form.Group>
+                {this.state.errorMessage ?
+                  (<Alert key={this.state.errorMessage} variant='danger'>
+                    {this.state.errorMessage}
+                  </Alert>)
+                  : ''
+                }
+                <Button variant="primary" type="submit" disabled={this.state.isLoading}>
+                  {this.state.isLoading ?
+                    (<><Spinner
+                      as="span"
+                      animation="grow"
+                      size="sm"
+                      role="status"
+                      aria-hidden="true"
+                    /> Loading...</>)
+                    : "Create"}
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+        </Layout>
+      </>
     );
   }
 }

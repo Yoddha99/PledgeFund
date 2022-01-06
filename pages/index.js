@@ -4,6 +4,7 @@ import { Row, Col, CardGroup, Card, Button } from 'react-bootstrap';
 import Router from 'next/router';
 import Link from 'next/link';
 import Layout from '../components/Layout';
+import Head from 'next/head';
 import 'font-awesome/css/font-awesome.min.css';
 
 
@@ -16,24 +17,29 @@ class CampaignIndex extends React.Component {
   renderCampaigns() {
     const cards = this.props.campaigns.map((address) => {
       return (
-        <Row style={{ width: '-webkit-fill-available', marginBottom: '10px' }} key={address}>
-          <Col lg={12} md={12} sm={12}>
-            <Card>
-              <Card.Body>
-                <Card.Text>
-                  {address}
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">
-                  <span className="campaign-link">
-                    <Link href={`/campaigns/${address}`}>View Campaign</Link>
-                  </span>
-                </small>
-              </Card.Footer>
-            </Card>
-          </Col>
-        </Row>
+        <>
+          <Head>
+            <title>Dashboard - PledgeFund</title>
+          </Head>
+          <Row style={{ width: '-webkit-fill-available', marginBottom: '10px' }} key={address}>
+            <Col lg={12} md={12} sm={12}>
+              <Card>
+                <Card.Body>
+                  <Card.Text>
+                    {address}
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <small className="text-muted">
+                    <span className="campaign-link">
+                      <Link href={`/campaigns/${address}`}>View Campaign</Link>
+                    </span>
+                  </small>
+                </Card.Footer>
+              </Card>
+            </Col>
+          </Row>
+        </>
       );
     });
 
