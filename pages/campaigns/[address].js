@@ -85,7 +85,7 @@ class CampaignShow extends React.Component {
         </Col>
         <Col>
           <Card style={{ height: '100%' }}>
-            <Card.Header>Balance</Card.Header>
+            <Card.Header>Balance (Ether)</Card.Header>
             <Card.Body>
               <Card.Title> {web3.utils.fromWei(balance, 'ether')} </Card.Title>
               <Card.Text>
